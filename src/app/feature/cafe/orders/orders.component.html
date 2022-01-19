@@ -1,0 +1,11 @@
+<table *ngFor="let values of orders">
+  <tr *ngFor="let keys of headers">
+    <th>{{keys}}</th>
+  </tr>
+  <tr>
+    <td>{{values.id}}</td>
+    <td>{{values.name}}</td>
+    <td>{{values.product}}</td>
+    <td>{{values.description}}</td>
+  </tr>
+</table>
