@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Customer } from '../models/Customer/Customer';
+import { Order } from '../models/Customer/Order';
 import { Product } from '../models/Customer/Product';
 
 @Injectable({
@@ -11,16 +12,21 @@ import { Product } from '../models/Customer/Product';
 export class CafeService {
   baseUrl = `${environment.baseUrl}`;
   orderUrl = `${environment.orderUrl}`;
+  customerUrl = `${environment.customerUrl}`;
 
   constructor(private http: HttpClient) {}
 
   all(): Observable<Product[]> {
     return this.http.get<Product[]>(`${this.baseUrl}`);
-    console.log(`${this.baseUrl}`);
+  }
+
+  allOrder(): Observable<Order[]>{
+    return this.http.get<Order[]>(`${this.customerUrl}`);
+
   }
 
   delete(id: number) {
-    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+    return this.http.delete<void>(`${this.orderUrl}/${id}`);
   }
 
   edit(customer: Customer, product: Product) {

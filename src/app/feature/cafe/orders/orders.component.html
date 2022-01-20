@@ -1,11 +1,15 @@
-<table *ngFor="let values of orders">
-  <tr *ngFor="let keys of headers">
-    <th>{{keys}}</th>
-  </tr>
+<table id=table class="table table-striped">
   <tr>
-    <td>{{values.id}}</td>
-    <td>{{values.name}}</td>
-    <td>{{values.product}}</td>
-    <td>{{values.description}}</td>
+    <th *ngFor="let header of headers">
+      {{header}}
+    </th>
   </tr>
+<tr *ngFor="let value of orders">
+  <td>{{ value.customer }}</td>
+  <td>
+    <img src='https://i.imgur.com/e9SU4p8.png' class="mr-2" style="width: 20px">
+    {{ value.product }}</td>
+  <td>R$ {{ value.price }}</td>
+    <button class="botao" (click)="deleteOrder(value.id)" >DONE</button>
+</tr>
 </table>

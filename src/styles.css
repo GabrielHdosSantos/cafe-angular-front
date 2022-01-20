@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: linear-gradient(142deg, #ffffff, #ffffff, #ffffff, #ffffff);
+  -webkit-animation: colors 6s ease infinite;
+  animation: colors 6s ease infinite;
+  height: 150%;
+  background-size: 400% 400%;
+  margin: 0;
+}
+
+html {
+  margin: 0;
+}
+@-webkit-keyframes colors {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes colors {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

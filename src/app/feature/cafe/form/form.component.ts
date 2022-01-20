@@ -41,5 +41,6 @@ export class FormComponent implements OnInit {
   clickOnSubmit() {
     const customer: Customer = this.formOrder.value;
     this.cafeService.addOrder(customer, this.productId).subscribe();
+    this.router.navigate(['../../'], {relativeTo: this.routes})
   }
 }

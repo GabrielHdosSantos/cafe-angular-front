@@ -36,7 +36,7 @@ const routes: Routes = [
     component: OrdersComponent
   },
   {
-    path: 'editar',
+    path: 'pedido',
     children: [
       {
         path: ':id',

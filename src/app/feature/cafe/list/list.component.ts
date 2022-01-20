@@ -2,7 +2,6 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/core/models/Customer/Product';
 import { CafeService } from 'src/app/core/service/cafe.service';
-import { CafeDataResolver } from '../cafe-routing.module';
 
 @Component({
   selector: 'app-list',
@@ -13,24 +12,48 @@ export class ListComponent implements OnInit {
   products = [];
 
   headers: String[] = ['name', 'description', 'price', 'imageUrl'];
+  responsiveOptions: {
+    breakpoint: string;
+    numVisible: number;
+    numScroll: number;
+  }[];
 
-  constructor(private cafeResolver: CafeDataResolver,
+  constructor(
     private cafeService: CafeService,
     private route: Router,
-    private activated: ActivatedRoute) {}
+    private activated: ActivatedRoute
+  ) {
+    this.responsiveOptions = [
+      {
+        breakpoint: '1024px',
+        numVisible: 3,
+        numScroll: 3,
+      },
+      {
+        breakpoint: '768px',
+        numVisible: 2,
+        numScroll: 2,
+      },
+      {
+        breakpoint: '560px',
+        numVisible: 1,
+        numScroll: 1,
+      },
+    ];
+
+
+
+  }
+
 
   ngOnInit(): void {
-
     this.cafeService.all().subscribe((value) => {
       this.products = value;
-    })
-
+    });
   }
 
-
-  doOrder(id:number){
-    this.route.navigate(['editar', id], {relativeTo: this.activated})
+  doOrder(id: number) {
+    this.route.navigate(['pedido', id], { relativeTo: this.activated });
   }
-
 
 }
