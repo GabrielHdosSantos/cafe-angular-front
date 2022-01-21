@@ -12,9 +12,10 @@ import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {TableModule} from 'primeng/table';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [ListComponent, FormComponent, EditComponent, OrdersComponent],
+  declarations: [ListComponent, FormComponent, EditComponent, OrdersComponent, HomeComponent],
   imports: [
     CommonModule,
     CafeRoutingModule,

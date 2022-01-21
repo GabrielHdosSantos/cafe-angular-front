@@ -31,4 +31,9 @@ console.log(orderId)
     this.cafeService.delete(Number(orderId)).subscribe();
     this.orders = this.orders.filter((order) => order.id !== orderId);
   }
+
+  goBack(){
+    this.router.navigate(['../../'])
+  }
+
 }

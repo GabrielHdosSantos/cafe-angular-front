@@ -53,7 +53,7 @@ export class ListComponent implements OnInit {
   }
 
   doOrder(id: number) {
-    this.route.navigate(['pedido', id], { relativeTo: this.activated });
+    this.route.navigate(['../pedido', id], { relativeTo: this.activated });
   }
 
 }

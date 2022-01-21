@@ -11,6 +11,7 @@ import { Product } from 'src/app/core/models/Customer/Product';
 import { CafeService } from 'src/app/core/service/cafe.service';
 import { EditComponent } from './edit/edit.component';
 import { FormComponent } from './form/form.component';
+import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { OrdersComponent } from './orders/orders.component';
 
@@ -26,10 +27,14 @@ export class CafeDataResolver implements Resolve<Product[]> {
 const routes: Routes = [
   {
     path: '',
+    component: HomeComponent,
+  },
+  {
+    path: 'produtos',
     component: ListComponent,
-    resolve: {
-      CafeDataResolver,
-    },
+      resolve: {
+        CafeDataResolver,     
+    }
   },
   {
     path: 'orders',

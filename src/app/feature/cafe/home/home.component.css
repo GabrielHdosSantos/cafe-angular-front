@@ -1,0 +1,49 @@
+.total {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagem {
+    height: 60px;
+    width: 60px;
+    background-image: url('https://static.vecteezy.com/system/resources/previews/000/440/746/non_2x/vector-coffee-icon.jpg');
+    background-size: cover;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.objetos {
+    display: flex;
+    flex-direction: row;
+}
+
+.texto {
+    margin-top: 220px;
+}
+
+.texto h1 {
+    font-size: 38px;
+    font-weight: 350;
+}
+
+.botoes button {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    font-size: 16.5px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    height: 28px;
+    width: 150px;
+    margin: 10px;
+}
+
+.botoes button:hover {
+    transition: all 0.3s;
+    color: white;
+    background-color: black;
+}
